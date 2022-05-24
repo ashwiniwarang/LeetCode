@@ -1,0 +1,12 @@
+class Solution:
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
+        length = len(nums)
+        hash_dict = {}
+        for i in range(length):
+            if nums[i] in hash_dict:
+                return[hash_dict[nums[i]],i]
+
+            ans = target - nums[i]
+            if ans not in hash_dict:
+                hash_dict[ans] = i
+        return -1    
